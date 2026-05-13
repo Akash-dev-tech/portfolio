@@ -1,39 +1,21 @@
-import { useState } from 'react';
-
 const Navbar = () => {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
-
-  const toggleMenu = () => {
-    // TASK: Write the logic to invert the current boolean state here
-    setIsMenuOpen((prev)=>!prev);
-  };
-
   return (
-    <nav className="sticky top-0 z-50 bg-white/80 backdrop-blur-md shadow-sm py-4 px-6 flex justify-between items-center">
-      <h2 className="text-xl font-bold text-gray-900 tracking-tight">Portfolio</h2>
+    <nav className="fixed top-0 w-full z-[70] border-b border-white/10 bg-black/80 backdrop-blur-xl px-8 py-4 flex justify-between items-center">
+      <div className="flex items-center gap-4">
+        <div className="w-3 h-3 bg-emerald-500 animate-pulse rounded-full" />
+        <a href="/" className="text-sm font-black uppercase tracking-[0.3em]">Akash_K_Murali // V1.0</a>
+      </div>
       
-      {/* Desktop Menu */}
-      <ul className="hidden md:flex space-x-8 font-medium text-gray-600">
-      <li className="hover:text-blue-600 transition-colors cursor-pointer">Projects</li>
-      <li className="hover:text-blue-600 transition-colors cursor-pointer">Contact</li>
-    </ul>
-
-      {/* Mobile Toggle Button */}
-      <button onClick={toggleMenu} className="md:hidden p-2 text-gray-600 hover:bg-gray-100 rounded-md">
-      Menu
-    </button>
-
-      {/* Mobile Menu Container */}
-      {isMenuOpen && (
-        <div className="absolute top-full left-0 w-full bg-white shadow-md md:hidden border-t border-gray-100 pb-4">
-          <ul className="flex flex-col space-y-4 px-6 pt-4 text-gray-700 font-medium">
-            <li className="hover:text-blue-600 transition-colors cursor-pointer">Projects</li>
-            <li className="hover:text-blue-600 transition-colors cursor-pointer">Contact</li>
-          </ul>
-        </div>
-      )}
+      <ul className="hidden md:flex space-x-12 text-[10px] font-bold uppercase tracking-widest text-zinc-500">
+        <li>
+          <a href="#projects" className="hover:text-white transition-colors cursor-pointer">[ 01. Projects ]</a>
+        </li>
+        <li>
+          <a href="#contact" className="hover:text-white transition-colors cursor-pointer">[ 02. Contact ]</a>
+        </li>
+      </ul>
     </nav>
   );
-};
+}; 
 
-export default Navbar;
+export default Navbar ;
